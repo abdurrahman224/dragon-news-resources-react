@@ -1,11 +1,25 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import HomeLayout from '../layouts/HomeLayout';
-import Header from '../components/Header';
+import CategorieNews from '../components/pages/CategorieNews';
+
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomeLayout/>
+    element: <HomeLayout />,
+    children: [
+      {
+        path: '',
+        element: <Navigate></Navigate>,
+      },
+
+      {
+        path: '/category/:id',
+        element: <CategorieNews/>,
+        loader: ({params}) =>
+          fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`),
+      },
+    ],
   },
   {
     path: '/news',

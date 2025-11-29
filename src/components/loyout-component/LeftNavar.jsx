@@ -1,6 +1,7 @@
 
 
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
   const LeftNavar = () => {
 
@@ -20,9 +21,15 @@ const [categories, setCategories] = useState([]);
     return (
       <div>
         <h2>Left Navber</h2>
-        <div className='py-10'>
+        <div className="flex flex-col  gap-4   ">
           {categories.map(categy => (
-            <p className='py-3' key={categy.category_id}>{categy?.category_name}</p>
+            <NavLink
+              to={`/category/${categy.category_id}`}
+              className="btn"
+              key={categy.category_id}
+            >
+              {categy?.category_name}
+            </NavLink>
           ))}
         </div>
       </div>
