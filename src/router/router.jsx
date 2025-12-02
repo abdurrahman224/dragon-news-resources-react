@@ -8,16 +8,18 @@ const router = createBrowserRouter([
     path: '/',
     element: <HomeLayout />,
     children: [
-      {
-        path: '',
-        element: <Navigate></Navigate>,
-      },
+      // {
+      //   path: '/category/01',
+      //   element: <Navigate></Navigate>,
+      // },
 
       {
         path: '/category/:id',
-        element: <CategorieNews/>,
-        loader: ({params}) =>
-          fetch(`https://openapi.programming-hero.com/api/news/category/${params.id}`),
+        element: <CategorieNews />,
+        loader: ({ params }) =>
+          fetch(
+            `https://openapi.programming-hero.com/api/news/category/${params.id}`
+          ),
       },
     ],
   },

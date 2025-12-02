@@ -1,12 +1,20 @@
 import { useLoaderData } from "react-router-dom";
+import NewsCarad from "./NewsCarad";
 
 const CategorieNews = () => {
-  const { data } = useLoaderData()
-  console.log("Hello",   data);
+  const { data:News } = useLoaderData()
+  console.log('Hello', News);
   
   return (
-    <div>
-      <h2>{ data.length}Categorie News </h2>
+    <div className="px-6 py-6">
+      <h2 className="">{News.length} News found on This category </h2>
+      <div>
+        {News.map(sengilNews => (
+          <NewsCarad key={sengilNews._id} News={sengilNews}>
+            
+          </NewsCarad>
+        ))}
+      </div>
     </div>
   );
 };

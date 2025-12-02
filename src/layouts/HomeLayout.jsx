@@ -20,11 +20,10 @@ const HomeLayout = () => {
           <LeftNavar />{' '}
         </aside>
         <section className="col-span-6">
-         
-          Main Content
+          <div className='px-6'>Drogon news Home </div>
           <Outlet />
         </section>
-        <aside className="col-span-3">
+        <aside className="col-span-3 ">
           <RightNaver />
         </aside>
       </main>
