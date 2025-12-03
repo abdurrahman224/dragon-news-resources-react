@@ -3,7 +3,8 @@ import Header from '../components/Header';
 import LatestNews from '../components/LatestNews';
 import LeftNavar from '../components/loyout-component/LeftNavar';
 import Navber from '../components/Navber';
-import RightNaver from './RightNaver';
+import RightNaver from '../components/RightNaver';
+
 
 const HomeLayout = () => {
   return (

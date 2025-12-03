@@ -1,6 +1,6 @@
-import FindUs from "./FindUs";
-import QZone from "./QZone";
-import SocialLayouut from "./SocialLayouut";
+import FindUs from "../layouts/FindUs";
+import QZone from "../layouts/QZone";
+import SocialLayouut from "../layouts/SocialLayouut";
 
 
 const RightNaver = () => {
