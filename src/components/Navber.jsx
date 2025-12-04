@@ -3,12 +3,11 @@ import user from "../assets/user.png";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 const Navber = () => {
-const {Uset} = useContext(AuthContext)
-
+const {User} = useContext(AuthContext)
 
   return (
     <div className="flex justify-between items-center my-4">
-      <div className="">{Uset.name}</div>
+      <div className="">{User && User.email}</div>
       <div className="nae space-x-5">
         <Link to="/">Home</Link>
         <Link to="/career">Career</Link>
