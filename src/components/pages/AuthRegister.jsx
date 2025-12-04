@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+
+
 
 const AuthRegister = () => {
+
+const { createNewUser, setUser } = useContext(AuthContext);
 
  const hendleSubmit = (e) =>{
 
@@ -12,7 +17,25 @@ const name = from.get("name")
 
 const email = from.get("email")
 const  password = from.get("password") 
-console.log(name,email,password);
+   console.log(name, email, password);
+   
+   createNewUser(email, password)
+     .then((userCredential) => {
+       
+       const user = userCredential.user;
+       setUser(user)
+
+       console.log('Hello', user);
+       
+     })
+   .catch ((error) => {
+     
+    const  errorCode = error.code
+     console.log(errorCode);
+     
+     
+   })
+
 
 
  }
